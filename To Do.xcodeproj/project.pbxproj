@@ -15,6 +15,9 @@
 		CF7266F624940180000419CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF7266F424940180000419CD /* LaunchScreen.storyboard */; };
 		CF72670124940181000419CD /* To_DoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72670024940181000419CD /* To_DoTests.swift */; };
 		CF72670C24940181000419CD /* To_DoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF72670B24940181000419CD /* To_DoUITests.swift */; };
+		CFBCACEF249A7CB200AE50B6 /* ToDoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBCACEE249A7CB200AE50B6 /* ToDoListVC.swift */; };
+		CFBCACF2249A7DAB00AE50B6 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBCACF1249A7DAB00AE50B6 /* ToDoCell.swift */; };
+		CFBCACF5249A874600AE50B6 /* NewToDoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFBCACF4249A874600AE50B6 /* NewToDoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		CF72670724940181000419CD /* To DoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "To DoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF72670B24940181000419CD /* To_DoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_DoUITests.swift; sourceTree = "<group>"; };
 		CF72670D24940181000419CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFBCACEE249A7CB200AE50B6 /* ToDoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListVC.swift; sourceTree = "<group>"; };
+		CFBCACF1249A7DAB00AE50B6 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
+		CFBCACF4249A874600AE50B6 /* NewToDoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,10 @@
 		CF7266E82494017D000419CD /* To Do */ = {
 			isa = PBXGroup;
 			children = (
+				CFBCACF0249A7D7B00AE50B6 /* Custom Views */,
+				CFBCACED249A7C6C00AE50B6 /* ViewControllers */,
 				CF7266E92494017D000419CD /* AppDelegate.swift */,
 				CF7266EB2494017D000419CD /* SceneDelegate.swift */,
-				CF7266ED2494017D000419CD /* ViewController.swift */,
 				CF7266EF2494017D000419CD /* Main.storyboard */,
 				CF7266F224940180000419CD /* Assets.xcassets */,
 				CF7266F424940180000419CD /* LaunchScreen.storyboard */,
@@ -126,6 +133,24 @@
 				CF72670D24940181000419CD /* Info.plist */,
 			);
 			path = "To DoUITests";
+			sourceTree = "<group>";
+		};
+		CFBCACED249A7C6C00AE50B6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF7266ED2494017D000419CD /* ViewController.swift */,
+				CFBCACEE249A7CB200AE50B6 /* ToDoListVC.swift */,
+				CFBCACF4249A874600AE50B6 /* NewToDoVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CFBCACF0249A7D7B00AE50B6 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				CFBCACF1249A7DAB00AE50B6 /* ToDoCell.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +286,10 @@
 			files = (
 				CF7266EE2494017D000419CD /* ViewController.swift in Sources */,
 				CF7266EA2494017D000419CD /* AppDelegate.swift in Sources */,
+				CFBCACEF249A7CB200AE50B6 /* ToDoListVC.swift in Sources */,
+				CFBCACF5249A874600AE50B6 /* NewToDoVC.swift in Sources */,
 				CF7266EC2494017D000419CD /* SceneDelegate.swift in Sources */,
+				CFBCACF2249A7DAB00AE50B6 /* ToDoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
