@@ -13,9 +13,16 @@ class ToDoListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
     
     
 
@@ -32,11 +39,17 @@ class ToDoListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //Mark:- UITableViewDataSource  Methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return AppContext.sharedInstance.savedItems().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "ToDoCell") as? ToDoCell else {
+            return UITableViewCell()
+        }
+        
+        cell.prepare(for: AppContext.sharedInstance.savedItems()[indexPath.row])
+        
+        return cell
     }
 
 }

@@ -73,6 +73,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="iSB-iy-6oq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Fzv-tk-6tB"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -138,7 +142,7 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NrU-Px-hz8">
                                 <rect key="frame" x="20" y="219.5" width="374" height="249.5"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="1" green="0.97957063192851856" blue="0.9145429991923345" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NrU-Px-hz8" secondAttribute="height" multiplier="3:2" id="BKO-iF-8UZ"/>
                                 </constraints>

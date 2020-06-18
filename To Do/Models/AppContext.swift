@@ -10,7 +10,7 @@ import UIKit
 
 class AppContext: NSObject {
     public static var sharedInstance = AppContext()
-    var items: [ToDoItem]
+    private var items: [ToDoItem]
     
     private override init() {
         self.items = []
@@ -21,4 +21,7 @@ class AppContext: NSObject {
         self.items.append(item)
     }
     
+    public func savedItems() -> [ToDoItem] {
+        return self.items
+    }
 }

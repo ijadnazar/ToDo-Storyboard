@@ -23,4 +23,9 @@ class ToDoCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    public func prepare(for item: ToDoItem){
+        self.titleLabel.text = item.title
+        self.summaryLabel.text = item.itemDescription
+    }
 }
