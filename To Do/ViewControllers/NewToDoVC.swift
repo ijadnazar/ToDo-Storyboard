@@ -36,6 +36,7 @@ class NewToDoVC: UIViewController {
         
         let item = ToDoItem(title: title, itemDescription: description)
         AppContext.sharedInstance.addNew(item: item)
+        self.navigationController?.popViewController(animated: true)
     }
     
 }
