@@ -132,6 +132,9 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="FeI-Ju-HqW" eventType="touchUpInside" id="Dkt-bY-bu9"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NrU-Px-hz8">
                                 <rect key="frame" x="20" y="219.5" width="374" height="249.5"/>
@@ -163,6 +166,10 @@
                         <viewLayoutGuide key="safeArea" id="GYV-Ww-yf1"/>
                     </view>
                     <navigationItem key="navigationItem" id="4Q5-53-kOj"/>
+                    <connections>
+                        <outlet property="desdcriptionTextView" destination="NrU-Px-hz8" id="eOj-nE-jH9"/>
+                        <outlet property="titleLabel" destination="CI7-Yo-Wn7" id="o6R-oe-hPv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnS-7H-DNT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
