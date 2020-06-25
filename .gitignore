@@ -1,2 +1,4 @@
-To Do.xcodeproj/xcuserdata/
-To Do.xcworkspace/
+To Do.xcodeproj/*
+To Do.xcworkspace/*
+Pods/*
+Pods/Pods.xcodeproj/xcuserdata/mehdiijadnazar.xcuserdatad/xcschemes/Pods-To Do-To DoUITests.xcscheme

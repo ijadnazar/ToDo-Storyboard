@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Realm
 
 struct ToDoItem {
+    var id: Int
     var title = ""
     var itemDescription = ""
+    
 }
