@@ -7,21 +7,30 @@
 //
 
 import UIKit
+import RealmSwift
 
 class AppContext: NSObject {
     public static var sharedInstance = AppContext()
-    private var items: [ToDoItem]
+    private var items: Results<ToDoItem>!
+    private var resultItems: Results<ToDoItem>!
     
     private override init() {
-        self.items = []
+        let realm = try! Realm()
+        
+        self.items = realm.objects(ToDoItem.self)
         super.init()
     }
     
     public func addNew(item: ToDoItem) {
-        self.items.append(item)
-    }
+//        self.items.append(item)
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(item)
+        }
+        }
     
-    public func savedItems() -> [ToDoItem] {
+    public func savedItems() -> Results<ToDoItem>! {
         return self.items
     }
 }

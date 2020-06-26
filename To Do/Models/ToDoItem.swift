@@ -7,11 +7,21 @@
 //
 
 import UIKit
-import Realm
+import RealmSwift
 
-struct ToDoItem {
-    var id: Int
-    var title = ""
-    var itemDescription = ""
+class ToDoItem: Object {
+    @objc dynamic var id = ""
+    @objc dynamic var title = ""
+    @objc dynamic var itemDescription = ""
     
+    convenience init(_ title: String, _ description: String) {
+        self.init()
+        self.title = title
+        self.itemDescription = description
+        self.id = UUID().uuidString
+    }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
