@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ToDoListVC: BaseVC, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewToDoVC: UIViewController {
+class NewToDoVC: BaseVC {
 
     @IBOutlet weak var titleLabel: UITextField!
     @IBOutlet weak var desdcriptionTextView: UITextView!
