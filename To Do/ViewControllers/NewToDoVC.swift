@@ -10,27 +10,20 @@ import UIKit
 
 class NewToDoVC: BaseVC {
 
-    @IBOutlet weak var titleLabel: UITextField!
+    @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var desdcriptionTextView: UITextView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowHandler(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShowHandler(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want    to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func addButtonTapped(_ sender: Any) {
-        guard let title = self.titleLabel.text, let description = self.desdcriptionTextView.text else {
+        guard let title = self.titleTF.text, let description = self.desdcriptionTextView.text else {
             return
         }
         
@@ -39,4 +32,18 @@ class NewToDoVC: BaseVC {
         self.navigationController?.popViewController(animated: true)
     }
     
+}
+
+extension NewToDoVC {
+    @objc func keyboardWillShowHandler(_ notificatioin: Notification) {
+        guard let userInfo = notificatioin.userInfo else {
+            return
+        }
+        
+        let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let isShowing = notificatioin.name == UIResponder.keyboardWillShowNotification ? true : false
+        let adjusmentHeight = (keyboardFrame.height + 20) * (isShowing ? 1 : -1)
+        
+        scrollView.contentInset.bottom += adjusmentHeight
+    }
 }
